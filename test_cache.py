@@ -6,7 +6,7 @@ def main():
     cache.set('Walter', 'White')
     cache.set('Jesse', 'James')
     print(cache.get('Jesse')) # вернёт 'James'
-    #cache.rem('Walter')
+    cache.rem('Walter')
     print(cache.get('Walter')) # вернёт ''
 
 if __name__ == "__main__":
