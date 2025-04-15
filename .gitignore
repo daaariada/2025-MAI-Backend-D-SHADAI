@@ -1,0 +1,16 @@
+# Виртуальное окружение
+venv/
+
+# Файлы окружения
+.env
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Логи
+*.log
+
+# VSCode настройки
+.vscode/
