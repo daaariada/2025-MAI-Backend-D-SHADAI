@@ -1,16 +1,33 @@
 # Виртуальное окружение
 venv/
-
-# Файлы окружения
+.env/
+.env.local
+.env.*.local
 .env
+
+# БД
+*.sqlite3
+*.db
 
 # Кеш Python
 __pycache__/
 *.py[cod]
 *$py.class
 
+# Статика
+static/
+media/
+
 # Логи
 *.log
+logs/
 
-# VSCode настройки
+# IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# Временные файлы
+*.tmp
+*.temp
