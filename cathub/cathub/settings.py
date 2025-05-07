@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'cathub',
         'USER': 'cathub_user',
         'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }

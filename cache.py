@@ -1,27 +1,24 @@
+from collections import OrderedDict
+
 class LRUCache:
-    def __init__(self, capacity: int=10) -> None:
+    def __init__(self, capacity: int = 10) -> None:
         self.capacity = capacity
-        self.cache = {}
-        self.order = []
+        self.cache = OrderedDict()
 
     def get(self, key: str) -> str:
         if key in self.cache:
-            self.order.remove(key)
-            self.order.append(key)
+            self.cache.move_to_end(key)
             return self.cache[key]
-        else:
-            return ''
+        return ''
 
     def set(self, key: str, value: str) -> None:
         if key in self.cache:
-            self.order.remove(key)
-        elif len(self.cache) >= self.capacity:
-            oldest_key = self.order.pop(0)
-            del self.cache[oldest_key]
+            self.cache.move_to_end(key)
         self.cache[key] = value
-        self.order.append(key)
+        if len(self.cache) > self.capacity:
+            self.cache.popitem(last=False)
 
     def rem(self, key: str) -> None:
         if key in self.cache:
             del self.cache[key]
-            self.order.remove(key)
+
